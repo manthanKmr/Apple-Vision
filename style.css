@@ -24,6 +24,16 @@ html, body{
     background: #000;
 }
 
+
+#page video{
+    position: absolute;
+    width: 80%;
+    height: 100%;    
+    left: 50%;
+    transform: translateX(-50%);
+    object-fit: cover;
+}
+
 #page nav{
     position: absolute;
     height: 10vh;
@@ -142,17 +152,68 @@ html, body{
     background: #1478dd;
 }
 
-#page video{
+#page #page-bottom{
     position: absolute;
-    left: 0;
-    width: 100%;
-    height: 100%;    
-    object-fit: cover;
+    width: 25%;
+    height: 20%;
+    /* background: green; */
+    left: 50%;
+    bottom: 10%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
-#page1{
+#page #page-bottom #page-bottom-text{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#page #page-bottom #page-bottom-text a{
+    color: rgb(255, 90, 0);
+    margin-top: 15px;
+    font-size: 24px;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+#page #page-bottom #page-bottom-text a:hover{
+    text-decoration: underline;
+}
+
+#page #page-bottom #page-bottom-text i{
+    margin-top: 22px;
+    color: rgb(255, 90, 0);
+    font-size: 24px;
+    font-weight: 400;
+    cursor: pointer;
+    text-align:center;
+}
+
+#page1, #page2, #page3, #page4{
     position: relative;
     width: 100vw;
     height: 100vh;
     background: #fff;
+}
+
+#page1 p, #page2 p, #page3 p, #page4 p{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 48px;
+    color: #fff;
+    font-weight: 900;
+    text-align: center;
+    white-space: nowrap;
+}
+
+#page1 video, #page2 video, #page3 video, #page4 video{
+    height: 100%;
+    width: 100%;
+    object-fit: cover; 
 }

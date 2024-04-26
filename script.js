@@ -31,3 +31,52 @@ ScrollTrigger.refresh();
 }
 
 loco()
+
+gsap.to('#page>video',{
+  scrollTrigger:{
+    trigger:"#page>video",
+    scroller:"#main",
+    start:"2% top",
+    end: "bottom top",
+    // markers:true
+  },
+  onStart:()=>{
+    document.querySelector("#page video").play()
+  }
+})
+
+gsap.to("#page",{
+  scrollTrigger:{
+    trigger:"#page",
+    scroller:"#main",
+    start:" top top",
+    end:"bottom top",
+    pin:true,
+  }
+})
+
+gsap.to("#page-bottom",{
+  scrollTrigger:{
+    trigger:"#page-bottom",
+    scroller:"#main",
+    start:" 57% top",
+    end:"bottom top",
+    // markers:true
+  },
+  opacity:0,
+})
+
+var tl = gsap.timeline({
+  scrollTrigger:{
+    trigger:"#page1",
+    scroller:"#main",
+    start:" top top",
+    scrub:1,
+    markers:true,
+    pin:true
+  }
+})
+
+tl.to("#page1>p",{
+  top:"-50%",
+})
