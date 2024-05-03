@@ -17,83 +17,71 @@ html, body{
     overflow: hidden;
 }
 
-#page{
-    position: relative;
-    height: 100vh;
-    width: 100vw;
-    background: #000;
-}
-
-
-#page video{
-    position: absolute;
-    width: 80%;
-    height: 100%;    
-    left: 50%;
-    transform: translateX(-50%);
-    object-fit: cover;
-}
-
-#page nav{
-    position: absolute;
-    height: 10vh;
-    width: 60vw;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #000000c0;
-    z-index: 10;
-}
-
-#page nav #top{
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: fixed;
+    height: 90px;
     width: 100%;
+    top: 0;
+    /* left: 50%; */
+    /* transform: translateX(-50%); */
+    background: #000000c0;
+    z-index: 999;
+    
+}
+
+nav #top{
+    width: 90%;
     height: 50%;
     display: flex;
     align-items:center;
     justify-content: center;
-    padding: 5px 20px;
+    padding: 5px 0px;
     /* background: red; */
 }
 
-#page nav #top img{
-    width: 2%;
+nav #top img{
+    width: 1.5%;
 }
 
-#page nav #top ul{
+nav #top ul{
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-#page nav #top ul li{
+nav #top ul li{
     list-style: none;
     margin-left: 40px;
 }
 
-#page nav #top ul li a{
+nav #top ul li a{
     text-decoration: none;
     color: #999999;
     font-size: 12px;
     transition: all .5s ease;
 }
 
-#page nav #top ul li a:hover{
+nav #top ul li a:hover{
     color: #cfcfcf;
 }
 
-#page nav #top ul li a i{
+nav #top ul li a i{
     font-size: 15px;
 }
 
-#page nav #bottom{
-    width: 100%;
+nav #bottom{
+    width: 90%;
     height: 50%;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-#page nav #bottom #left h1{
+nav #bottom #left h1{
     font-size: 21px;
     font-weight: 900;
     padding: 0px 60px;
@@ -101,31 +89,31 @@ html, body{
     cursor:pointer;
 }
 
-#page nav #bottom #right{
+nav #bottom #right{
     padding-right: 60px;
 }
 
-#page nav #bottom #right #anc1{
+nav #bottom #right #anc1{
     color: #999999;
 }
 
-#page nav #bottom #right a{
+nav #bottom #right a{
     text-decoration: none;
     font-size: 12px;
     margin-left: 30px;
     color: #fff;
 }
 
-#page nav #bottom #right a:hover{
+nav #bottom #right a:hover{
     color:#1478dd;
 }
 
-#page nav #bottom #right button{
+nav #bottom #right button{
     margin-left: 30px;
     cursor: pointer;
 }
 
-#page nav #bottom #right #btn1{
+nav #bottom #right #btn1{
     background: transparent;
     color: #fff;
     padding: 5px 10px;
@@ -134,12 +122,12 @@ html, body{
     border: 1px solid #fff;
 }
 
-#page nav #bottom #right #btn1:hover{
+nav #bottom #right #btn1:hover{
     background: #fff;
     color: #000;
 }
 
-#page nav #bottom #right #btn2{
+nav #bottom #right #btn2{
     background: #0071e3;
     color: #fff;
     border-radius: 50px;
@@ -148,8 +136,24 @@ html, body{
     font-size: 12px;
 }
 
-#page nav #bottom #right #btn2:hover{
+nav #bottom #right #btn2:hover{
     background: #1478dd;
+}
+
+#page{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background: #000;
+}
+
+#page video{
+    position: absolute;
+    width: 80%;
+    height: 100%;    
+    left: 50%;
+    transform: translateX(-50%);
+    object-fit: cover;
 }
 
 #page #page-bottom{
@@ -196,24 +200,41 @@ html, body{
 #page1, #page2, #page3, #page4{
     position: relative;
     width: 100vw;
-    height: 100vh;
+    max-height: 100vh;
     background: #fff;
+    z-index: 9;
+}
+
+#page1.active video{
+    opacity: 1;
+    filter: blur(0);
 }
 
 #page1 p, #page2 p, #page3 p, #page4 p{
     position: absolute;
-    top: 50%;
+    bottom:20%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
     font-size: 48px;
     color: #fff;
     font-weight: 900;
     text-align: center;
     white-space: nowrap;
+    z-index: 10;
 }
 
 #page1 video, #page2 video, #page3 video, #page4 video{
     height: 100%;
     width: 100%;
     object-fit: cover; 
+}
+
+#page1::before, #page2::before, #page3::before, #page4::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.404);
 }
