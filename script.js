@@ -125,3 +125,33 @@ var tl = gsap.timeline({
 tl.to("#page4>p",{
   top:"25%",
 })
+
+var tl = gsap.timeline({
+  scrollTrigger:{
+    trigger:"#page6",
+    scroller:"#main",
+    start:" top top",
+    scrub:1,
+    // markers:true,
+    pin:true
+  }
+})
+
+tl.to("#page6>#page6-text",{
+  top:"-15%",
+})
+
+var tl = gsap.timeline({
+  scrollTrigger:{
+    trigger:"#page8",
+    scroller:"#main",
+    start:" top top",
+    scrub:1,
+    // markers:true,
+    pin:true
+  }
+})
+
+tl.to("#page8>#page8-text",{
+  top:"-15%",
+})
