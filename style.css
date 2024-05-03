@@ -17,129 +17,6 @@ html, body{
     overflow: hidden;
 }
 
-nav{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    position: fixed;
-    height: 90px;
-    width: 100%;
-    top: 0;
-    /* left: 50%; */
-    /* transform: translateX(-50%); */
-    background: #000000c0;
-    z-index: 999;
-    
-}
-
-nav #top{
-    width: 90%;
-    height: 50%;
-    display: flex;
-    align-items:center;
-    justify-content: center;
-    padding: 5px 0px;
-    /* background: red; */
-}
-
-nav #top img{
-    width: 1.5%;
-}
-
-nav #top ul{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-nav #top ul li{
-    list-style: none;
-    margin-left: 40px;
-}
-
-nav #top ul li a{
-    text-decoration: none;
-    color: #999999;
-    font-size: 12px;
-    transition: all .5s ease;
-}
-
-nav #top ul li a:hover{
-    color: #cfcfcf;
-}
-
-nav #top ul li a i{
-    font-size: 15px;
-}
-
-nav #bottom{
-    width: 90%;
-    height: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-nav #bottom #left h1{
-    font-size: 21px;
-    font-weight: 900;
-    padding: 0px 60px;
-    color: #fff;
-    cursor:pointer;
-}
-
-nav #bottom #right{
-    padding-right: 60px;
-}
-
-nav #bottom #right #anc1{
-    color: #999999;
-}
-
-nav #bottom #right a{
-    text-decoration: none;
-    font-size: 12px;
-    margin-left: 30px;
-    color: #fff;
-}
-
-nav #bottom #right a:hover{
-    color:#1478dd;
-}
-
-nav #bottom #right button{
-    margin-left: 30px;
-    cursor: pointer;
-}
-
-nav #bottom #right #btn1{
-    background: transparent;
-    color: #fff;
-    padding: 5px 10px;
-    border-radius: 50px;
-    font-size: 12px;
-    border: 1px solid #fff;
-}
-
-nav #bottom #right #btn1:hover{
-    background: #fff;
-    color: #000;
-}
-
-nav #bottom #right #btn2{
-    background: #0071e3;
-    color: #fff;
-    border-radius: 50px;
-    border: none;
-    padding: 5px 15px;
-    font-size: 12px;
-}
-
-nav #bottom #right #btn2:hover{
-    background: #1478dd;
-}
-
 #page{
     position: relative;
     height: 100vh;
@@ -154,6 +31,128 @@ nav #bottom #right #btn2:hover{
     left: 50%;
     transform: translateX(-50%);
     object-fit: cover;
+}
+
+#navbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+    height: 90px;
+    width: 100%;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #000000c0;
+    z-index: 10;
+}
+
+#navbar #top{
+    width: 90%;
+    height: 50%;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    padding: 5px 0px;
+    /* background: red; */
+}
+
+#navbar #top img{
+    width: 1.5%;
+}
+
+#navbar #top ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#navbar #top ul li{
+    list-style: none;
+    margin-left: 40px;
+}
+
+#navbar #top ul li a{
+    text-decoration: none;
+    color: #999999;
+    font-size: 12px;
+    transition: all .5s ease;
+}
+
+#navbar #top ul li a:hover{
+    color: #cfcfcf;
+}
+
+#navbar #top ul li a i{
+    font-size: 15px;
+}
+
+#navbar #bottom{
+    width: 90%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#navbar #bottom #left h1{
+    font-size: 21px;
+    font-weight: 900;
+    padding: 0px 60px;
+    color: #fff;
+    cursor:pointer;
+}
+
+#navbar #bottom #right{
+    padding-right: 60px;
+}
+
+#navbar #bottom #right #anc1{
+    color: #999999;
+}
+
+#navbar #bottom #right a{
+    text-decoration: none;
+    font-size: 12px;
+    margin-left: 30px;
+    color: #fff;
+}
+
+#navbar #bottom #right a:hover{
+    color:#1478dd;
+}
+
+#navbar #bottom #right button{
+    margin-left: 30px;
+    cursor: pointer;
+}
+
+#navbar #bottom #right #btn1{
+    background: transparent;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 50px;
+    font-size: 12px;
+    border: 1px solid #fff;
+}
+
+#navbar #bottom #right #btn1:hover{
+    background: #fff;
+    color: #000;
+}
+
+#navbar #bottom #right #btn2{
+    background: #0071e3;
+    color: #fff;
+    border-radius: 50px;
+    border: none;
+    padding: 5px 15px;
+    font-size: 12px;
+}
+
+#navbar #bottom #right #btn2:hover{
+    background: #1478dd;
 }
 
 #page #page-bottom{
