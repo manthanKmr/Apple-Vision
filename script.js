@@ -446,7 +446,7 @@ var vRatio = canvas.height / img.height;
 var ratio = Math.min(hRatio, vRatio);
 var centerShift_x = (canvas.width - img.width * ratio) / 2;
 var centerShift_y = (canvas.height - img.height * ratio) / 2;
-ctx.clearRect(0, 0, canvas.width, canvas.height);
+ctx.clearRect(0,0, canvas.width, canvas.height);
 ctx.drawImage(
   img,
   0,
@@ -467,7 +467,135 @@ pin: true,
 scroller: `#main`,
 //   set start end according to preference
 start: `top top`,
-end: `600% top`,
+end: `700% top`,
+// markers:true,
 });
 }
 canvas();
+
+var tl = gsap.timeline({
+  scrollTrigger:{
+    trigger:"#page26",
+    scroller:"#main",
+    start:" top top",
+    scrub:1,
+    // markers:true,
+    pin:true
+  }
+})
+
+tl.to("#page26 > #page26-text",{
+  top:"-15%",
+})
+
+function canvas1(){
+  const canvas = document.querySelector("#page35>canvas");
+const context = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+
+window.addEventListener("resize", function () {
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+render();
+});
+
+function files(index) {
+var data = `
+./Assests/Vision00001.png
+./Assests/Vision00002.png
+./Assests/Vision00003.png
+./Assests/Vision00004.png
+./Assests/Vision00005.png
+./Assests/Vision00006.png
+./Assests/Vision00007.png
+./Assests/Vision00008.png
+./Assests/Vision00009.png
+./Assests/Vision00010.png
+./Assests/Vision00011.png
+./Assests/Vision00012.png
+./Assests/Vision00013.png
+./Assests/Vision00014.png
+./Assests/Vision00015.png
+./Assests/Vision00016.png
+./Assests/Vision00017.png
+./Assests/Vision00018.png
+./Assests/Vision00019.png
+./Assests/Vision00020.png
+./Assests/Vision00021.png
+./Assests/Vision00022.png
+./Assests/Vision00023.png
+./Assests/Vision00024.png
+./Assests/Vision00025.png
+`;
+return data.split("\n")[index];
+}
+
+const frameCount = 25;
+
+const images = [];
+const imageSeq = {
+frame: 1,
+};
+
+for (let i = 0; i < frameCount; i++) {
+const img = new Image();
+img.src = files(i);
+images.push(img);
+}
+
+gsap.to(imageSeq, {
+frame: frameCount - 1,
+snap: "frame",
+ease: `none`,
+scrollTrigger: {
+  scrub: 0.15,
+  trigger: `#page35`,
+  //   set start end according to preference
+  start: `top top`,
+  end: `80% top`,
+  scroller: `#main`,
+},
+onUpdate: render,
+});
+
+images[1].onload = render;
+
+function render() {
+scaleImage(images[imageSeq.frame], context);
+}
+
+function scaleImage(img, ctx) {
+var canvas = ctx.canvas;
+var hRatio = canvas.width / img.width;
+var vRatio = canvas.height / img.height;
+var ratio = Math.max(hRatio, vRatio);
+var centerShift_x = (canvas.width - img.width * ratio) / 2;
+var centerShift_y = (canvas.height - img.height * ratio) / 2;
+ctx.clearRect(0, 0, canvas.width, canvas.height);
+ctx.drawImage(
+  img,
+  0,
+  0,
+  img.width,
+  img.height,
+  centerShift_x,
+  centerShift_y,
+  img.width * ratio,
+  img.height * ratio
+);
+}
+ScrollTrigger.create({
+
+trigger: "#page35",
+pin: true,
+// markers:true,
+scroller: `#main`,
+//   set start end according to preference
+start: `top top`,
+end: `80% top`,
+});
+}
+canvas1();
