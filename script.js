@@ -599,3 +599,34 @@ end: `80% top`,
 });
 }
 canvas1();
+
+var tl = gsap.timeline({
+  scrollTrigger:{
+    trigger:"#page38",
+    scroller:"#main",
+    start:" top top",
+    end:"40% top",
+    scrub:1,
+    // markers:true,
+    pin:true
+  }
+})
+
+tl.to("#page38>#troff",{
+  opacity:"0",
+})
+
+var tl = gsap.timeline({
+  scrollTrigger:{
+    trigger:"#page39",
+    scroller:"#main",
+    start:" top top",
+    scrub:1,
+    // markers:true,
+    pin:true
+  }
+})
+
+tl.to("#page39>#troff",{
+  opacity:"0",
+})
